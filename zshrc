@@ -18,7 +18,7 @@ unsetopt BEEP
 # completions
 autoload -Uz compinit
 zstyle ':completion:*' menu select
-# zstyle ':completion::complete:lsof:*' menu yes select
+zstyle ':completion::complete:lsof:*' menu yes select
 zmodload zsh/complist
 # compinit
 _comp_options+=(globdots)		# Include hidden files.
@@ -45,14 +45,14 @@ zsh_add_file "zsh-search-history"
 zsh_add_plugin "zsh-users/zsh-autosuggestions"
 zsh_add_plugin "zsh-users/zsh-syntax-highlighting"
 zsh_add_plugin "hlissner/zsh-autopair"
-# zsh_add_completion "esc/conda-zsh-completion" false
+# zsh_add_completion "esc/conda-zsh-completion"
 # For more plugins: https://github.com/unixorn/awesome-zsh-plugins
 # More completions https://github.com/zsh-users/zsh-completions
 
 # Key-bindings
 bindkey -s '^o' 'vifm .^M'
-bindkey -s '^s' 'fd^M'
-bindkey -s '^z' 'ff^M'
+# bindkey -s '^s' 'fd^M'
+# bindkey -s '^z' 'ff^M'
 # bindkey -s '^s' 'zi^M'
 # bindkey -s '^v' 'nvim\n'
 bindkey '^[[P' delete-char
@@ -62,16 +62,17 @@ bindkey "^k" up-line-or-beginning-search # Up
 bindkey "^j" down-line-or-beginning-search # Down
 bindkey -r "^u"
 bindkey -r "^d"
+bindkey -M menuselect '^[[Z' reverse-menu-complete
 
 # WINIT_X11_SCALE_FACTOR=2 alacritty
 
 # FZF 
 # TODO update for mac
-# [ -f /usr/share/fzf/completion.zsh ] && source /usr/share/fzf/completion.zsh
-# [ -f /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh
-# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-# [ -f $ZDOTDIR/completion/_fnm ] && fpath+="$ZDOTDIR/completion/"
-# export FZF_DEFAULT_COMMAND='rg --hidden -l ""'
+[ -f /usr/share/fzf/completion.zsh ] && source /usr/share/fzf/completion.zsh
+[ -f /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f $ZDOTDIR/completion/_fnm ] && fpath+="$ZDOTDIR/completion/"
+export FZF_DEFAULT_COMMAND='rg --hidden -l ""'
 # compinit
 
 # Edit line in vim with ctrl-e:

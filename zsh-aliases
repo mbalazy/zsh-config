@@ -43,7 +43,7 @@ alias mach_list_systemctl="systemctl list-unit-files --state=enabled"
 alias mach_java_mode="export SDKMAN_DIR="/home/chris/.sdkman" && [[ -s "/home/chris/.sdkman/bin/sdkman-init.sh" ]] && source "/home/chris/.sdkman/bin/sdkman-init.sh""
 
 alias lg="lazygit"
-alias la="ls -laF --block-size=K"
+alias la="lsd -la"
 
 alias lzd="sudo lazydocker"
 
@@ -55,6 +55,8 @@ alias wscan="sudo iw dev wlan0 scan | grep SSID"
 
 alias loginMydevil='ssh mart007@s1.mydevil.net'
 alias loginAlpha='ssh mart@82.118.230.33'
+alias ff='fd --type f --hidden --exclude .git | fzf-tmux --reverse | xargs lvim'
+# alias ff='fd --type f --hidden --exclude .git | fzf-tmux --reverse | xargs lvim'
 
 alias mui5='npx @mui/codemod v5.0.0/preset-safe'
 alias mui5j='npx @mui/codemod v5.0.0/jss-to-styled'
