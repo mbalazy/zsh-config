@@ -58,6 +58,8 @@ alias loginAlpha='ssh mart@82.118.230.33'
 alias ff='fd --type f --hidden --exclude .git | fzf-tmux --reverse | xargs lvim'
 # alias ff='fd --type f --hidden --exclude .git | fzf-tmux --reverse | xargs lvim'
 
+alias lc="yes | lerna clean && lerna bootstrap"
+
 alias mui5='npx @mui/codemod v5.0.0/preset-safe'
 alias mui5j='npx @mui/codemod v5.0.0/jss-to-styled'
 
